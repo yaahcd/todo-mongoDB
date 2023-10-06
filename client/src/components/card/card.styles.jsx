@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardItem = styled.div`
   position: relative;
-  background-color: ${(props) => props.chosenColor};
+  background-color: ${(props) => props.color};
   margin: 10px;
   padding: 20px 15px;
   border-radius: 5px;

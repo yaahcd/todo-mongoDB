@@ -10,6 +10,6 @@ body {
   color: #f0ddc0;
   background-color: #251f1f;
   overflow-x: hidden;
-  
+  justify-items: end;
 }
  

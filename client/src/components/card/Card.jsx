@@ -4,7 +4,9 @@ import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 TimeAgo.addDefaultLocale(en);
 
-function Card({ card, setUpdateList, chosenColor }) {
+function Card(props) {
+
+  const { card, setUpdateList, chosenColor } = props 
   const date = new Date(card.date);
   const timeAgo = new TimeAgo("en-US");
   const formattedDate = timeAgo.format(date);
@@ -28,7 +30,7 @@ function Card({ card, setUpdateList, chosenColor }) {
   };
 
   return (
-    <CardItem chosenColor={chosenColor}>
+    <CardItem color={chosenColor}>
       <DeleteButton onClick={() => handleDelete(card._id)}>
         &#10005;
       </DeleteButton>

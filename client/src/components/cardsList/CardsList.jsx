@@ -8,11 +8,13 @@ import {
   ButtonsContainer,
 } from "./cardsList.styles";
 import ColorSelection from "../colorSelection/ColorSelection";
+import AddCard from "../addCard/AddCard";
 
 function CardsList() {
   const [cardsList, setCardsList] = useState([]);
   const [updateList, setUpdateList] = useState(false);
   const [chosenColor, setChosenColor] = useState("#597d7c");
+  const [addNewCard, setAddNewCard] = useState(false)
 
   useEffect(() => {
     getCards().then((cards) => {
@@ -22,10 +24,14 @@ function CardsList() {
     });
   }, [updateList]);
 
-  return (
+  const handleAddCard = () => {
+    setAddNewCard(!addNewCard)
+  }
+
+return (
     <CardsContainer>
       <ButtonsContainer>
-        <Button>+ add new</Button>
+        <Button onClick={handleAddCard}>+ add new</Button>
         <ColorSelection setChosenColor={setChosenColor} />
       </ButtonsContainer>
       <CardItems>
@@ -40,7 +46,10 @@ function CardsList() {
           );
         })}
       </CardItems>
+      {addNewCard && (<AddCard chosenColor={chosenColor} handleAddCard={handleAddCard} setUpdateList={setUpdateList}/>)}
     </CardsContainer>
+
+
   );
 }
 
