@@ -6,11 +6,11 @@ export const CardsContainer = styled.div`
   padding: 0 15px;
 `;
 
-export const CardItems =  styled.div`
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-overflow: auto;
-`
+export const CardItems = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  overflow: auto;
+`;
 export const Button = styled.button`
   border: none;
   background: none;
@@ -24,8 +24,8 @@ export const Button = styled.button`
 `;
 
 export const ButtonsContainer = styled.div`
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-column-gap: 50px;
-justify-items: end;
-`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 50px;
+  justify-items: end;
+`;
