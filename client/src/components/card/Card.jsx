@@ -1,35 +1,48 @@
-import { deleteCard } from "../../../services/cardsAPI"
-import { CardItem, DeleteButton, UpdateButton } from "./card.styles"
-import TimeAgo from 'javascript-time-ago';
+import { useState } from "react";
+import { deleteCard, patchCard } from "../../../services/cardsAPI";
+import { CardItem, DeleteButton } from "./card.styles";
+import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 TimeAgo.addDefaultLocale(en);
 
-function Card({card, setUpdateList}) {
+function Card({ card, setUpdateList }) {
+  const [cardUpdate, setCardUpdate] = useState({
+    text: "",
+  });
 
-    const date = new Date(card.date)
-    const timeAgo = new TimeAgo("en-US");
-    const formattedDate = timeAgo.format(date)
+  const date = new Date(card.date);
+  const timeAgo = new TimeAgo("en-US");
+  const formattedDate = timeAgo.format(date);
 
-    const handleDelete = (id) => {
-        deleteCard(id).then(() => {
-            setUpdateList(true)
-        })
+  const handleDelete = (id) => {
+    deleteCard(id).then(() => {
+      setUpdateList(true);
+    });
+  };
 
+  const handleUpdate = (id, e) => {
+    setCardUpdate({ text: e.target.innerText });
+
+    if (card.text !== e.target.innerText) {
+      patchCard(id, cardUpdate).then((result) => {
+        setUpdateList(true);
+      });
     }
-
-    const handleUpdate = (id) => {
-
-    }
+  };
 
   return (
     <CardItem>
-    <UpdateButton>&#9998;</UpdateButton>
-    <DeleteButton onClick={() => handleDelete(card._id)}>&#10005;</DeleteButton>
+      <DeleteButton onClick={() => handleDelete(card._id)}>
+        &#10005;
+      </DeleteButton>
       <p>{formattedDate}</p>
-      <h3>{card.text}</h3>
-      <br/><br/>
+      <h3
+        contentEditable="true"
+        onBlur={(e) => handleUpdate(card._id, e)}
+        dangerouslySetInnerHTML={{ __html: card.text }}
+      />
     </CardItem>
-  )
+  );
 }
 
-export default Card
+export default Card;

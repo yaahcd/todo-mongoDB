@@ -15,7 +15,6 @@ function CardsList() {
     });
   }, [updateList]);
 
-  console.log(cardsList);
   return (
     <CardsContainer>
       <Button>+ add new</Button>

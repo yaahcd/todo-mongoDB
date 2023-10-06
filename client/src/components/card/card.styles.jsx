@@ -38,19 +38,3 @@ export const DeleteButton = styled.button`
     color: #000;
   }
 `;
-
-export const UpdateButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 40px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #650000;
-  background: none;
-  border: none;
-
-  &:hover {
-    color: #000;
-  }
-`;
