@@ -1,19 +1,19 @@
 import axios from "axios";
 
-const apiUrl = "/api/cards";
+const apiUrl = "http://localhost:9000/api/cards/";
 
-exports.getCards = () => {
-  return axios.get(apiUrl);
+export const getCards = () => {
+  return axios.get(apiUrl)
 };
 
-exports.postCards = (card) => {
+export const postCards = (card) => {
   return axios.post(apiUrl, card);
 };
 
-exports.patchCard = (id, card) => {
+export const patchCard = (id, card) => {
   return axios.patch(`${apiUrl}/${id}`, card);
 };
 
-exports.deleteCard = (id) => {
+export const deleteCard = (id) => {
   return axios.delete(`${apiUrl}/${id}`);
 };

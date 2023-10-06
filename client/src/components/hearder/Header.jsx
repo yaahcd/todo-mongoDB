@@ -1,4 +1,4 @@
-import { HeaderContainer } from "../header.styles"
+import { HeaderContainer, Button } from "../header.styles"
 
 
 function Header() {
@@ -6,8 +6,10 @@ function Header() {
 
   return (
     <HeaderContainer>
+        <Button>
         <button>+</button>
-      <h1>Notes of things I need to remember</h1>
+        </Button>
+      <h1>Remeber me:</h1>
     </HeaderContainer>
   )
 }
