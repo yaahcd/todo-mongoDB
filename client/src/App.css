@@ -1,9 +1,15 @@
+* {
+  margin: 0;
+}
+
 body {
  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  color: #333;
-  background-color: #f4f4f4;
+  color: #f0ddc0;
+  background-color: #251f1f;
   overflow-x: hidden;
+  
 }
+ 

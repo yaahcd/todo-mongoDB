@@ -9,4 +9,16 @@ export const CardsContainer = styled.div`
 export const CardItems =  styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+overflow: auto;
 `
+export const Button = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #f0ddc0;
+  font-size: 18px;
+  font-family: "Croissant One", cursive;
+  margin-left: 20px;
+`;
+
+ // position: absolute;
