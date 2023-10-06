@@ -18,7 +18,14 @@ export const Button = styled.button`
   color: #f0ddc0;
   font-size: 18px;
   font-family: "Croissant One", cursive;
-  margin-left: 20px;
+  justify-self: start;
+  text-align: start;
+  margin-left: 25px;
 `;
 
- // position: absolute;
+export const ButtonsContainer = styled.div`
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+column-gap: 50px;
+justify-items: end;
+`

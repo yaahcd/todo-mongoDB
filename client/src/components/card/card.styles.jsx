@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardItem = styled.div`
   position: relative;
-  background-color: #597d7c;
+  background-color: ${(props) => props.chosenColor};
   margin: 10px;
   padding: 20px 15px;
   border-radius: 5px;
@@ -19,7 +19,7 @@ export const CardItem = styled.div`
     margin-bottom: 10px;
     font-size: 15px;
     font-weight: bold;
-    color: #650000;
+    color: black;
   }
 `;
 
@@ -30,11 +30,11 @@ export const DeleteButton = styled.button`
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  color: #650000;
+  color: black;
   background: none;
   border: none;
 
   &:hover {
-    color: #000;
+    color: #650000;
   }
 `;
