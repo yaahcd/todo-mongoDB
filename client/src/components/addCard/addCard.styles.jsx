@@ -9,9 +9,7 @@ export const MainContainer = styled.div`
   bottom: 0;
   position: fixed;
   background: rgba(49, 49, 49, 0.8);
-  `;
-  
-
+`;
 
 export const FormContainer = styled.div`
   margin: 10% auto;
@@ -23,7 +21,6 @@ export const FormContainer = styled.div`
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
 
   button {
     align-self: end;
@@ -37,7 +34,6 @@ export const FormContainer = styled.div`
 `;
 
 export const Form = styled.div`
-
   display: flex;
   flex-direction: column;
   align-items: center;

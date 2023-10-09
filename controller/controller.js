@@ -47,7 +47,7 @@ exports.updateCardById = async (req, res) => {
       {
         $set: {
           text: req.body.text,
-          date: new Date()
+          date: new Date(),
         },
       },
       { new: true }

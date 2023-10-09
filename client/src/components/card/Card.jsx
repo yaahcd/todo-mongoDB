@@ -4,9 +4,8 @@ import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 TimeAgo.addDefaultLocale(en);
 
-function Card(props) {
+function Card({ card, setUpdateList, chosenColor }) {
 
-  const { card, setUpdateList, chosenColor } = props 
   const date = new Date(card.date);
   const timeAgo = new TimeAgo("en-US");
   const formattedDate = timeAgo.format(date);
