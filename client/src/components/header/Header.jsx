@@ -1,4 +1,4 @@
-import { HeaderContainer } from "../header.styles";
+import { HeaderContainer } from "./header.styles";
 
 function Header() {
   return (
