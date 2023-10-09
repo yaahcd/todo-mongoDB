@@ -17,7 +17,14 @@ export const LoadingSpinnerContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 450px;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(49, 49, 49, 0.8);
 `;
 
 export const LoadingSpinner = styled.div`
