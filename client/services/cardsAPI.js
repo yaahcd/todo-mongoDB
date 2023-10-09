@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiUrl = "http://localhost:9000/api/cards/";
+const apiUrl = "/api/cards/";
 
 export const getCards = () => {
   return axios.get(apiUrl)
