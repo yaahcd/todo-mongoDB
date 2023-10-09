@@ -1,9 +1,21 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const cardsContainerLoad = keyframes`
+from {
+   opacity: 0;
+      }
+to {
+  opacity: 1;
+      }
+    }
+`;
 
 export const CardsContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  animation-name: ${cardsContainerLoad};
+  animation-duration: 1s;
 `;
 
 export const CardItems = styled.div`

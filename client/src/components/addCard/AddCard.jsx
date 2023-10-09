@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, FormContainer, MainContainer } from "./addCard.styles";
-import { postCards } from '../../../services/cardsAPI'
+import { postCards } from "../../../services/cardsAPI";
 
 function AddCard({ chosenColor, handleAddCard, setUpdateList }) {
   const [newCard, setNewCard] = useState({
@@ -13,16 +13,24 @@ function AddCard({ chosenColor, handleAddCard, setUpdateList }) {
     });
   };
 
-  const handleClick = () => {
-    postCards(newCard).then((result) => {
+  const handleClick = (e) => {
+    if (e.target.dataset.id === "closeContainer") {
+      handleAddCard();
+    }
+  };
+
+  const handleAddNew = () => {
+    if (newCard.text.length) {
+      postCards(newCard).then((result) => {
         handleAddCard(false);
         setUpdateList(true);
-    });
+      });
+    }
   };
 
   return (
     <>
-      <MainContainer>
+      <MainContainer data-id="closeContainer" onClick={handleClick}>
         <FormContainer color={chosenColor}>
           <button onClick={handleAddCard}>&#10005;</button>
           <Form>
@@ -33,7 +41,7 @@ function AddCard({ chosenColor, handleAddCard, setUpdateList }) {
               rows="10"
               onChange={handleChange}
             ></textarea>
-            <button onClick={handleClick}>+ add new</button>
+            <button onClick={handleAddNew}>+ add new</button>
           </Form>
         </FormContainer>
       </MainContainer>

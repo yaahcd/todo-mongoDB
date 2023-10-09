@@ -1,4 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const formopen = keyframes`
+from {
+   opacity: 0;
+      }
+to {
+  opacity: 1;
+      }
+    }
+`;
 
 export const MainContainer = styled.div`
   width: 100vw;
@@ -21,6 +31,8 @@ export const FormContainer = styled.div`
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-name: ${formopen};
+  animation-duration: 1s;
 
   button {
     align-self: end;
@@ -38,6 +50,7 @@ export const Form = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 
   textarea {
     background-color: #251f1f;
@@ -59,18 +72,6 @@ export const Form = styled.div`
     cursor: pointer;
   }
 `;
-
-// animation-name: formopen;
-//   animation-duration: var(--modal-duration);
-
-// &: @keyframes formopen {
-//     from {
-//       opacity: 0;
-//     }
-//     to {
-//       opacity: 1;
-//     }
-//   }
 
 //   &: @media (max-width: 768px) {
 //     .modal-box {

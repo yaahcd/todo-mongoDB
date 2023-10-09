@@ -15,7 +15,7 @@ function CardsList() {
   const [cardsList, setCardsList] = useState([]);
   const [updateList, setUpdateList] = useState(false);
   const [chosenColor, setChosenColor] = useState("#597d7c");
-  const [addNewCard, setAddNewCard] = useState(false);
+  const [openCardForm, setOpenCardForm] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -30,42 +30,40 @@ function CardsList() {
   }, [updateList]);
 
   const handleAddCard = () => {
-    setAddNewCard(!addNewCard);
+    setOpenCardForm(!openCardForm);
   };
 
   if (isLoading) {
-    return (
-      <Loading />
-    )
-  } 
-
-   return (
-      <CardsContainer>
-        <ButtonsContainer>
-          <Button onClick={handleAddCard}>+ add new</Button>
-          <ColorSelection setChosenColor={setChosenColor} />
-        </ButtonsContainer>
-        <CardItems>
-          {cardsList.map((card) => {
-            return (
-              <Card
-                key={card._id}
-                card={card}
-                setUpdateList={setUpdateList}
-                chosenColor={chosenColor}
-              />
-            );
-          })}
-        </CardItems>
-        {addNewCard && (
-          <AddCard
-            chosenColor={chosenColor}
-            handleAddCard={handleAddCard}
-            setUpdateList={setUpdateList}
-          />
-        )}
-      </CardsContainer>
-    );
+    return <Loading />;
   }
+
+  return (
+    <CardsContainer>
+      <ButtonsContainer>
+        <Button onClick={setOpenCardForm}>+ add new</Button>
+        <ColorSelection setChosenColor={setChosenColor} />
+      </ButtonsContainer>
+      <CardItems>
+        {cardsList.map((card) => {
+          return (
+            <Card
+              key={card._id}
+              card={card}
+              setUpdateList={setUpdateList}
+              chosenColor={chosenColor}
+            />
+          );
+        })}
+      </CardItems>
+      {openCardForm && (
+        <AddCard
+          chosenColor={chosenColor}
+          handleAddCard={handleAddCard}
+          setUpdateList={setUpdateList}
+        />
+      )}
+    </CardsContainer>
+  );
+}
 
 export default CardsList;
