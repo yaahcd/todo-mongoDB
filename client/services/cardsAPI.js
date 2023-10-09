@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiUrl = "/api/cards/";
+const apiUrl = "https://todo-mongo-jgfk.onrender.com/api/cards/";
 
 export const getCards = () => {
   return axios.get(apiUrl)

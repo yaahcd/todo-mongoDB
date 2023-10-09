@@ -16,7 +16,7 @@ app.use(cors());
 app.use("/api/cards", cardsRouter);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Random Ideas API");
+  res.send("Welcome to the Remember Me API");
 });
 
 app.listen(port, () => {
