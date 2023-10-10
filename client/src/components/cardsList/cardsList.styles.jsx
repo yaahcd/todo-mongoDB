@@ -33,11 +33,20 @@ export const Button = styled.button`
   justify-self: start;
   text-align: start;
   margin-left: 25px;
+  grid-column-start: 1;
+  grid-column-end: 3;
 `;
 
 export const ButtonsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 50px;
   justify-items: end;
+  @media (max-width: 800px) {
+    column-gap: 0px;
+  }
+  @media (max-width: 460px) {
+    display: flex;
+    column-gap: 0px;
+  }
 `;

@@ -5,6 +5,9 @@ export const ColorsContainer = styled.div`
   margin: 5px 25px;
   justify-items: end;
   align-items: end;
+  @media (max-width: 1050px) {
+    display: flex;
+  }
 `;
 
 export const ColorButton = styled.button`
