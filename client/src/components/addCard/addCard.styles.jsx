@@ -33,6 +33,9 @@ export const FormContainer = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   animation-name: ${formopen};
   animation-duration: 1s;
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 
   button {
     align-self: end;
