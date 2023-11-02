@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { deleteCard, patchCard } from "../../../services/cardsAPI";
 import { CardItem, DeleteButton } from "./card.styles";
 import TimeAgo from "javascript-time-ago";
@@ -5,15 +6,19 @@ import en from "javascript-time-ago/locale/en";
 TimeAgo.addDefaultLocale(en);
 
 function Card({ card, setUpdateList, chosenColor }) {
-
+  
   const date = new Date(card.date);
   const timeAgo = new TimeAgo("en-US");
   const formattedDate = timeAgo.format(date);
 
   const handleDelete = (id) => {
-    deleteCard(id).then(() => {
-      setUpdateList(true);
-    });
+    if (confirm("Are you sure?")) {
+      deleteCard(id).then(() => {
+        setUpdateList(true);
+      });
+    } else {
+      return;
+    }
   };
 
   const handleUpdate = (id, e) => {
