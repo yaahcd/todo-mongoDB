@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+const formopen = keyframes`
+from {
+   opacity: 0;
+      }
+to {
+  opacity: 1;
+      }
+    }
+`;
+
 export const ColorsContainer = styled.div`
   grid-column-start: 4;
   margin: 5px 25px;
@@ -16,6 +26,9 @@ export const ColorButton = styled.button`
   border: solid 1.5px #f0ddc0;
   border-radius: 55%;
   cursor: pointer;
-  font-size: 18px;
   background-color: ${(props) => props.color};
+
+  &:hover {
+    padding: 12px;
+  }
 `;
