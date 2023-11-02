@@ -1,15 +1,5 @@
 import styled from "styled-components";
 
-const formopen = keyframes`
-from {
-   opacity: 0;
-      }
-to {
-  opacity: 1;
-      }
-    }
-`;
-
 export const ColorsContainer = styled.div`
   grid-column-start: 4;
   margin: 5px 25px;
