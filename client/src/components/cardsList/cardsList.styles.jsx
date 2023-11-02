@@ -15,7 +15,7 @@ export const CardsContainer = styled.div`
   margin: 0 auto;
   padding: 0 15px;
   animation-name: ${cardsContainerLoad};
-  animation-duration: 1s;
+  animation-durpx;ation: 1s;
 `;
 
 export const CardItems = styled.div`
@@ -35,6 +35,10 @@ export const Button = styled.button`
   margin-left: 25px;
   grid-column-start: 1;
   grid-column-end: 3;
+
+  &:hover{
+    font-size: 19px;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
