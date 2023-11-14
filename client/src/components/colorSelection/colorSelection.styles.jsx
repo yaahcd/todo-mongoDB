@@ -17,8 +17,10 @@ export const ColorButton = styled.button`
   border-radius: 55%;
   cursor: pointer;
   background-color: ${(props) => props.color};
+  opacity: 0.7;
+  transition: .3s ease;
 
   &:hover {
-    padding: 12px;
+    opacity: 1;
   }
 `;

@@ -35,6 +35,7 @@ export const Button = styled.button`
   margin-left: 25px;
   grid-column-start: 1;
   grid-column-end: 3;
+  transition: .3s;
 
   &:hover{
     font-size: 19px;

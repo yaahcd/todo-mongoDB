@@ -45,6 +45,7 @@ export const FormContainer = styled.div`
     font-weight: bold;
     font-size: 17px;
     cursor: pointer;
+    transition: .2s;
 
     &:hover {
       color: #f0ddc0; 
