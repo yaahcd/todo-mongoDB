@@ -55,7 +55,6 @@ exports.updateCardById = async (req, res) => {
     );
     return res.status(200).send({ updatedCard });
   } catch (error) {
-    console.log(error);
     res.status(404).send({ error: "Something went wrong" });
   }
 };
